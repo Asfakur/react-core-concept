@@ -25,10 +25,30 @@ function App() {
         <p>
           My first React Paragraph
         </p>
+
+        <Person></Person>
+        <Person></Person>
         
       </header>
     </div>
   );
+}
+
+//Component Declare er time a first letter ta capital letter hobe for example: Person
+function Person() {
+
+  const personStyle = {
+    border: '2px solid red',
+    margin: '10px'
+  }
+
+  return (
+    // <div style={{border: '2px solid red', margin: '10px'}}>
+    <div style={personStyle}>
+      <h1>Name: Md. Islam</h1>
+      <h3>Hero of the Year</h3>
+    </div>
+  )
 }
 
 export default App;
