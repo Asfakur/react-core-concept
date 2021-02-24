@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const nayoks = ['Anwar', 'Jafor', 'Alomgir', 'Salman'];
   var person = {
     name : "Kuddus Ali",
     job : "Chemist"
@@ -26,8 +27,10 @@ function App() {
           My first React Paragraph
         </p>
 
-        <Person></Person>
-        <Person></Person>
+        <Person name={nayoks[1]} food="Fuska" nayika="Bobita"></Person>
+        <Person name="Jashim" nayika="Sabana"></Person>
+        <Person name="Bappa Raj" nayika="Nipun"></Person>
+        <Person name="Elias K" nayika="Dithi"></Person>
         
       </header>
     </div>
@@ -35,18 +38,18 @@ function App() {
 }
 
 //Component Declare er time a first letter ta capital letter hobe for example: Person
-function Person() {
+function Person(props) {
 
   const personStyle = {
     border: '2px solid red',
     margin: '10px'
   }
-
+  console.log(props);
   return (
     // <div style={{border: '2px solid red', margin: '10px'}}>
     <div style={personStyle}>
-      <h1>Name: Md. Islam</h1>
-      <h3>Hero of the Year</h3>
+      <h1>Nayok: {props.name}</h1>
+      <h3>Nayika: {props.nayika}</h3>
     </div>
   )
 }
