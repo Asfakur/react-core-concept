@@ -3,21 +3,42 @@ import './App.css';
 
 function App() {
   
+  const nayoks = ['Razzak', 'Jasim', 'Alomgir', 'Salman', 'Shuvo', 'Arfin'];
+
   const products = [
     {name: 'Photoshop', price:'$90.99'},
     {name:'Illustrator', price:'$60.99'},
-    {name: 'Pdf Reader', price: '6.66'}
+    {name: 'Pdf Reader', price: '6.66'},
+    {name: 'Premier Elements', price: '246.66'}
   ]
+
+  const productNames = products.map(product => product.name);
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <ul>
+          {
+            nayoks.map(nayok => <li>{nayok}</li>)
+          }
+
+          <p>Here start Products</p>
+          {
+            productNames.map(product => <li>{product}</li>)
+          }
+
+        </ul>
+
+        {
+          products.map(pd => <Product product={pd}></Product>)
+        }
+        
         
         {/* <Product name={products[0].name} price={products[0].price}></Product> */}
 
-        <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
+        {/* <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product> */}
         
       </header>
     </div>
@@ -36,6 +57,9 @@ function Product(props) {
   const {name, price} = props.product; //this is called destructure
   console.log(name,price);
   return (
+
+    
+
     // <div style={productStyle}>
     //   <h3>Name:{props.name}</h3>
     //   <h5>Price:{props.price}</h5>
