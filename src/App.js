@@ -2,6 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var person = {
+    name : "Kuddus Ali",
+    job : "Chemist"
+  }
+  
+  var style = {
+    color:'red',
+    backgroundColor: 'yellow'
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +19,13 @@ function App() {
         <p>
           Edit Done second <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="" style={style}>Heading in react name :{person.name + ", " + person.job} </h1>
+
+        <h1 style={{backgroundColor:'blue', color:'yellow'}}>React calculation {(2+5) * 2}</h1>
+        <p>
+          My first React Paragraph
+        </p>
+        
       </header>
     </div>
   );
