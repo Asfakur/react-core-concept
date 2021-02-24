@@ -2,54 +2,61 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nayoks = ['Anwar', 'Jafor', 'Alomgir', 'Salman'];
-  var person = {
-    name : "Kuddus Ali",
-    job : "Chemist"
-  }
   
-  var style = {
-    color:'red',
-    backgroundColor: 'yellow'
-  }
-  
+  const products = [
+    {name: 'Photoshop', price:'$90.99'},
+    {name:'Illustrator', price:'$60.99'},
+    {name: 'Pdf Reader', price: '6.66'}
+  ]
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit Done second <code>src/App.js</code> and save to reload.
-        </p>
-        <h1 className="" style={style}>Heading in react name :{person.name + ", " + person.job} </h1>
+        
+        {/* <Product name={products[0].name} price={products[0].price}></Product> */}
 
-        <h1 style={{backgroundColor:'blue', color:'yellow'}}>React calculation {(2+5) * 2}</h1>
-        <p>
-          My first React Paragraph
-        </p>
-
-        <Person name={nayoks[1]} food="Fuska" nayika="Bobita"></Person>
-        <Person name="Jashim" nayika="Sabana"></Person>
-        <Person name="Bappa Raj" nayika="Nipun"></Person>
-        <Person name="Elias K" nayika="Dithi"></Person>
+        <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product>
         
       </header>
     </div>
   );
 }
 
-//Component Declare er time a first letter ta capital letter hobe for example: Person
+function Product(props) {
+  const productStyle = {
+    border: '1px solid gray',
+    borderRadius:'5px',
+    backgroundColor:'pink',
+    height:'300px',
+    width:'400px',
+    float:'left'
+  }
+  const {name, price} = props.product; //this is called destructure
+  console.log(name,price);
+  return (
+    // <div style={productStyle}>
+    //   <h3>Name:{props.name}</h3>
+    //   <h5>Price:{props.price}</h5>
+    //   <button>Buy now</button>
+    // </div>
+    <div style={productStyle}>
+      {/* <h3>Name:{props.product.name}</h3> */}
+      {/* destructure element */}
+      <h3>Name:{name}</h3> 
+      <h5>Price:{props.product.price}</h5>
+      <button>Buy now</button>
+    </div>
+  )
+}
+
 function Person(props) {
 
-  const personStyle = {
-    border: '2px solid red',
-    margin: '10px'
-  }
-  console.log(props);
   return (
-    // <div style={{border: '2px solid red', margin: '10px'}}>
-    <div style={personStyle}>
-      <h1>Nayok: {props.name}</h1>
-      <h3>Nayika: {props.nayika}</h3>
+    <div style={{border: '2px solid red', margin: '10px', width:'400px'}}>
+      <h1>Name: {props.name}</h1>
+      <h3>Profession: {props.job}</h3>
     </div>
   )
 }
